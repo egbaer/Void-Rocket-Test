@@ -1,7 +1,14 @@
+
+
+body {
+  background-color: tan;
+  overflow: hidden;
+}
+
 .planebox{
   display: flex;
   flex-direction: row;
-  align-items: baseline;
+  align-items: flex-start;
 }
 
 .plane{
@@ -19,4 +26,26 @@
   border-color: purple;
   border-style: solid;
   border-width: 15px;
+}
+
+.planebox {
+  animation-duration: 10s;
+  animation-name: slidein;
+  animation-iteration-count: infinite;
+}
+
+@keyframes slidein {
+  from {
+    margin-left: 150vw;
+  }
+
+  to {
+    margin-left: -100vw;
+  }
+}
+
+.outside-browser {
+  overflow: hidden;
+  width: 400vw;
+  height: 300px;
 }
