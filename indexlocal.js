@@ -3,6 +3,7 @@
 //retrieving stored data
 var messages;
 var cache_id = "messages"
+var magin = $(".planebox").eq(0).css("margin-left");
 messages = JSON.parse(localStorage.getItem(cache_id));
 
 //...
@@ -44,16 +45,33 @@ function storeMes(_input,_list, cache){
 
 }
 
+/*
+function convertMagin(x){
+  
+  x = x.slice(-2);
+
+}
+*/
+
 function displayMes(cache) {
 
   //retrieves stored data and generates a random element to display
   var cached_messages = JSON.parse(localStorage.getItem(cache));
   var messageRange = cached_messages.length;
   console.log("Stored data: " + cached_messages);
+
+
   var displayedEle = randomRange(0, messageRange);
   console.log("Generated message: " + cached_messages[displayedEle]);
-}
+  
 
+  var animMessage = cached_messages[displayedEle];
+  $(".message").eq(0).html("<p>" + animMessage + "<p/>");
+  
+
+
+
+}
 
 
 
@@ -62,6 +80,7 @@ function displayMes(cache) {
 $('#submitInputButton').click(function(){
   var firstString = document.getElementById('stringField').value;
   var otherString = document.getElementById('otherStringField').value;
+
   console.log('Here is the first user input: '+firstString);
 
   messages = initialize(messages);
@@ -74,5 +93,6 @@ $('#submitInputButton').click(function(){
 
 
 });
+
 
 
