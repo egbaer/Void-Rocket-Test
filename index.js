@@ -24,6 +24,9 @@ $('#submitInputButton').click(function(){
   console.log("hopefully sent?");
 });
 
+
+//
+
 const saveInput = (firstString, otherString) => {
   var newUserInputs = fieldInputsDB.push();
   newUserInputs.set({
