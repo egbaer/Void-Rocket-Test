@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Plane Tester Prototype</title>
+    <script
+  src="https://code.jquery.com/jquery-3.6.1.min.js"
+  integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
+  crossorigin="anonymous"></script>
+    <script type="text/javascript" src="../js/index.js" defer></script>
+    <link rel="stylesheet" type="text/css" href="../css/index.css">
+  </head>
+  <body>
+    <div class="planebox">
+      <div class="plane planebg"></div>
+      <div class="message"></div>
+    </div>
+    <div class="planebox">
+      <div class="plane planebg"></div>
+      <div class="message"></div>
+    </div>
+    <div class="planebox">
+      <div class="plane planebg"></div>
+      <div class="message"></div>
+    </div>
+    <div class = "inputBox">
+       <h1>Let it Out</h1>
+       <input type="text" placeholder="Type your heart out..." id="stringField">
+       <button id="submitInputButton">Into the Void</button>
+       <div class = "themeButtonHolder">
+          <div class="themeButton planeThemeButton">
+             <p class = "themeLabel">Sky</p>
+             <div class = "themeCircle planeThemeCircle"></div>
+          </div>
+          <div class="themeButton shipThemeButton">
+             <p class = "themeLabel">Sea</p>
+             <div class = "themeCircle shipThemeCircle"></div>
+          </div>
+          <div class="themeButton ufoThemeButton">
+             <p class = "themeLabel">Space</p>
+             <div class = "themeCircle ufoThemeCircle"></div>
+          </div>
+       </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
+  </body>
+</html>
