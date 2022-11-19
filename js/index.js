@@ -32,7 +32,13 @@ var counterRef = firebase.database().ref("counter/counter");
 
 //Better submit button occurrence
 $('#submitInputButton').click(function(){
-
+  //Makes sure the user can't submit an empty field (that would be depressing)
+  if ($('#stringField').val()==""){
+     //Reprimands the user
+     console.log("Actually input something, dummy. Don't be THAT lazy.");
+     //Returns so nothing else happens
+     return;
+  };
   //Gets the value of the counter and passes it to the gotData function
   counterRef.once("value", gotData);
 });
@@ -85,4 +91,7 @@ function snatchData(data){
    //Increases grossIndex to change the next paragraph. Don't know how else to do this,
    //lol
    grossIndex +=1;
+   if (grossIndex >= $('.message').length){
+      grossIndex = 0;
+   }
 }
