@@ -1,4 +1,146 @@
-* {
-margin: 0;
-padding: 0;
+body {
+  background-color: tan;
+  overflow: hidden;
+}
+
+input {
+   margin-bottom: 15px;
+   border-radius: 10px;
+}
+
+#submitInputButton {
+   border-radius: 7px;
+   background-color: hsl(0deg 0% 90%);
+}
+
+#submitInputButton:hover {
+   background-color: hsl(0deg 0% 75%);
+}
+
+
+.inputBox{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  width : 50vw;
+  height: 50vh;
+  position: absolute;
+  top: 26vh;
+  right: 25vw;
+  border-style: solid;
+  border-width: 15px;
+  border-left-color: brown;
+  border-right-color: midnightblue;
+  border-top-color: brown;
+  border-bottom-color: midnightblue;
+  box-sizing: border-box;
+  box-shadow: 8px 5px 20px red, -8px -5px 20px blue;
+  border-radius: 300px;
+  
+}
+
+.themeButtonHolder {
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+   align-items: center;
+}
+
+.themeButton {
+   display: flex;
+   flex-direction: row;
+   justify-content: space-around;
+   align-items: center;
+   width: 80px;
+   height: 30px;
+   border-style: solid;
+   border-color: black;
+   border-radius: 5px;
+   border-width: 3px;
+}
+
+.themeCircle {
+   border-radius:100px;
+   border-style: solid;
+   border-color: black;
+   border-width: 2px;
+   width:20px;
+   height:20px;
+}
+
+.planeThemeCircle {
+   background-color: orange;
+}
+
+.shipThemeCircle {
+   background-color: cornflowerblue;
+}
+
+.ufoThemeCircle {
+   background-color: darkslategray;
+}
+
+.planebox{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  animation-duration: 10s;
+  animation-name: slidein;
+  animation-iteration-count: infinite;
+  margin-bottom: 31vh;
+  margin-top: 1vh;
+}
+
+.plane{
+  flex-shrink: 0;
+  width: 300px;
+  height: 100px;
+  /*background-color: black;*/
+  background-image: url(../img/ship.png);
+}
+
+.planebg {
+   background-image: url(../img/plane.png);
+}
+
+.shipbg {
+   background-image: url(../img/ship.png);
+}
+
+.ufobg {
+   background-image: url(../img/ufo.png);
+}
+
+
+.message {
+  flex-shrink: 0;
+  min-width: 200px;
+  height: 70px;
+  background-color: rgba(238,195,154,255);
+  border-color: purple;
+  border-style: solid;
+  border-width: 15px;
+  border-image-source: url(../img/banner.png);
+  border-image-slice: 15;
+  border-image-repeat: round;
+  border-image-outset: 3px;
+}
+
+@keyframes slidein {
+  from {
+    margin-left: 150vw;
+  }
+
+  to {
+    margin-left: -100vw;
+  }
+}
+
+
+.outside-browser {
+  overflow: hidden;
+  width: 400vw;
+  height: 300px;
 }
