@@ -1,34 +1,64 @@
 body {
-  background-color: tan;
+  /*background-color: tan;*/
   overflow: hidden;
 }
 
+body.planebgColor{
+   background: linear-gradient(165deg, rgba(247,140,43,1) 0%, rgba(168,50,10,1) 100%);
+}
+
+body.shipbgColor{
+   background: linear-gradient(165deg, rgba(37,110,213,1) 0%, rgba(10,168,135,1) 68%, rgba(10,168,135,1) 100%);
+}
+
+body.ufobgColor{
+   background: radial-gradient(circle, rgba(111,3,122,1) 0%, rgba(8,4,89,1) 100%);
+}
+
 input {
-   margin-bottom: 15px;
+   /*margin-bottom: 15px;*/
    border-radius: 10px;
+}
+
+.messageButtonHolder {
+   margin: 13px 5px 5px 5px;
 }
 
 #submitInputButton {
    border-radius: 7px;
-   background-color: hsl(0deg 0% 90%);
+   background-color: hsl(0deg 0% 95%);
 }
 
 #submitInputButton:hover {
-   background-color: hsl(0deg 0% 75%);
+   background-color: hsl(0deg 0% 80%);
 }
 
+.swapMessages {
+   border-radius: 7px;
+   background-color: hsl(0deg 0% 95%);
+}
+
+#.swapMessages:hover {
+   background-color: hsl(0deg 0% 80%);
+}
 
 .inputBox{
+  z-index: 80;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: white;
-  width : 50vw;
-  height: 50vh;
+  /*width : 50vw;
+  height: 50vh;*/
+  width: 425px;
+  height: 425px;
+  margin: auto;
   position: absolute;
-  top: 26vh;
-  right: 25vw;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
   border-style: solid;
   border-width: 15px;
   border-left-color: brown;
@@ -44,8 +74,10 @@ input {
 .themeButtonHolder {
    display: flex;
    flex-direction: row;
-   justify-content: space-between;
+   justify-content: space-around;
    align-items: center;
+   width: 300px;
+   margin: 7px 0;
 }
 
 .themeButton {
@@ -59,7 +91,43 @@ input {
    border-color: black;
    border-radius: 5px;
    border-width: 3px;
+   background-color: hsl(180deg, 23.1%, 92.4%);
+   border-color: hsl(180deg, 15.0%, 50%);
 }
+
+.themeButton:hover{
+   background-color: hsl(180deg, 23.1%, 80%);
+}
+
+
+.planeThemeButton.selected {
+   background-color: hsl(32deg, 98.3%, 76.3%);
+   border-color: rgba(168,50,10,1);
+}
+
+.shipThemeButton.selected {
+   background-color: hsl(182deg, 78.0%, 76.9%);
+   border-color: rgba(37,110,213,1);
+}
+
+.ufoThemeButton.selected {
+   background-color: hsl(257deg, 20.0%, 58.8%);
+   border-color: rgba(8,4,89,1);
+}
+
+
+.planeThemeButton.selected:hover {
+   background-color: hsl(32deg, 98.3%, 65.0%);
+}
+
+.shipThemeButton.selected:hover {
+   background-color: hsl(182deg, 78.0%, 65.0%);
+}
+
+.ufoThemeButton.selected:hover {
+   background-color: hsl(257deg, 20.0%, 47.0%);
+}
+
 
 .themeCircle {
    border-radius:100px;
@@ -72,15 +140,19 @@ input {
 
 .planeThemeCircle {
    background-color: orange;
+   border-color: rgba(168,50,10,1);
 }
 
 .shipThemeCircle {
    background-color: cornflowerblue;
+   border-color: rgba(37,110,213,1);
 }
 
 .ufoThemeCircle {
-   background-color: darkslategray;
+   background-color: #693187;
+   border-color: rgba(8,4,89,1);
 }
+
 
 .planebox{
   display: flex;
@@ -98,8 +170,9 @@ input {
   width: 300px;
   height: 100px;
   /*background-color: black;*/
-  background-image: url(../img/ship.png);
+  /*background-image: url(../img/ship.png)*/;
 }
+
 
 .planebg {
    background-image: url(../img/plane.png);
@@ -143,4 +216,80 @@ input {
   overflow: hidden;
   width: 400vw;
   height: 300px;
+}
+
+.popupButtonHolder{
+   display: flex;
+   flex-direction: row;
+   justify-content: space-between;
+   margin-top: 15px;
+   width: 140px;
+}
+
+.missionDivButton, .teamDivButton {
+   width: 60px;
+   height: 60px;
+   box-sizing: border-box;
+   border-style: outset;
+   border-width: 3px;
+   background-color: hsl(0deg 0% 95%);
+}
+
+.missionDivButton:hover, .teamDivButton:hover{
+   background-color: hsl(0deg 0% 90%);
+}
+
+.missionDivButton {
+   background-image: url(../img/mission.png);
+}
+
+.teamDivButton{
+   background-image: url(../img/team.png);
+}
+
+.popupButtonSelected{
+   background-color: hsl(0deg 0% 80%);
+   border-style: inset;
+}
+
+.missionDivButton.popupButtonSelected:hover, .teamDivButton.popupButtonSelected:hover{
+   background-color: hsl(0deg 0% 75%);
+}
+
+
+.missionPopup{
+   z-index: 100;
+   position: absolute;
+   margin:auto;
+   top: 0;
+   bottom: 0;
+   right: 0;
+   left: 0;
+   width: 60vw;
+   height: 60vh;
+   background-color: pink;
+   display:none;
+}
+
+.teamPopup{
+   display:none;
+   margin:auto;
+   top: 0;
+   bottom: 0;
+   right: 0;
+   left: 0;
+   z-index: 90;
+   position: absolute;
+   width: 60vw;
+   height: 60vh;
+   background-color: green;
+}
+
+.teamImgTag{
+  width: inherit;
+  max-width: 500px;
+}
+
+.closePopup{
+   width:inherit;
 }
