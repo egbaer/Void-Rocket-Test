@@ -6,10 +6,10 @@
   src="https://code.jquery.com/jquery-3.6.1.min.js"
   integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ="
   crossorigin="anonymous"></script>
-    <script type="text/javascript" src="../js/index.js" defer></script>
-    <link rel="stylesheet" type="text/css" href="../css/index.css">
+    <script type="text/javascript" src="js/index.js" defer></script>
+    <link rel="stylesheet" type="text/css" href="css/index.css">
   </head>
-  <body>
+  <body class ="planebgColor">
     <div class="planebox">
       <div class="plane planebg"></div>
       <div class="message"></div>
@@ -25,9 +25,12 @@
     <div class = "inputBox">
        <h1>Let it Out</h1>
        <input type="text" placeholder="Type your heart out..." id="stringField">
-       <button id="submitInputButton">Into the Void</button>
+       <div class = "messageButtonHolder">
+          <button id="submitInputButton">Into the Void</button>
+          <button class = "swapMessages">Swap Fates?</button>
+       </div>
        <div class = "themeButtonHolder">
-          <div class="themeButton planeThemeButton">
+          <div class="themeButton planeThemeButton selected">
              <p class = "themeLabel">Sky</p>
              <div class = "themeCircle planeThemeCircle"></div>
           </div>
@@ -40,6 +43,27 @@
              <div class = "themeCircle ufoThemeCircle"></div>
           </div>
        </div>
+       <div class = "popupButtonHolder">
+          <div class = "missionDivButton"></div>
+          <div class = "teamDivButton"></div>
+       </div>
+    </div>
+    <div class = "missionPopup">
+       <h2 class = "popupHeader">Our Mission</h2>
+       <p class = "popupPara">Our mission is to help people get things off their chest and experience 
+          less stress and anxiety. We create a sense of togetherness by showing that although the user
+           may be flying solo, they are surrounded by others in the same situation. At the same time, 
+          they are building a community art piece; their thoughts and feelings are their contributions.
+          <br>
+          You are welcome to confess as if writing in a diary, make people laugh, or simply let off 
+          some steam. Maybe you’ll even be inspired.</p>
+       <button id="closeMissionPopup" class = "closePopup">Close Popup</button>
+    </div>
+    <div class = "teamPopup">
+       <h2 class = "popupHeader">The Team</h2>
+       <p class = "popupPara">From left to right:</p>
+       <img class = "teamImgTag" src = "img/teamImg.png">
+       <button id="closeTeamPopup" class = "closePopup">Close Popup</button>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
