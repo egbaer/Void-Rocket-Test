@@ -3,7 +3,7 @@
 //https://www.youtube.com/watch?v=RAWHXRTKTHw&lc=UgxEnIRQ8_IHilmgWnd4AaABAg
 //Accessing Data - The Coding Train
 //https://www.youtube.com/watch?v=NcewaPfFR6Y
-//Working Example - Muhammd (?)
+//Working Example - Muhammåd Shàhzàiß Raø
 //https://codepen.io/muhamm-d-sh-hz-i-ra/pen/dyYyvXj
 
 const firebaseConfig = {
