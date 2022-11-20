@@ -95,3 +95,113 @@ function snatchData(data){
       grossIndex = 0;
    }
 }
+
+var attributeList = [
+   'Fates',
+   'Dreams',
+   'Passions',
+   'Roaming Thoughts',
+   'Idiots',
+   'Hopes',
+   'Regrets',
+   'Maybes',
+   'Loves'
+]
+
+
+//Switches the messages on the banners when the button is clicked without changing
+//the db
+$('.swapMessages').eq(0).click(function(){
+   //Gets the value of the counter and passes it to the swapData function
+   counterRef.once("value", swapData);
+   //Changes the text in the swap button to a random item in the attributeList
+   $('.swapMessages').eq(0).html('Swap '+ attributeList[Math.floor(Math.random() * attributeList.length)] +'?');
+});
+
+//Gets info to pass to the changeMessages function
+function swapData(data){
+   //Saves the current counter val in a var
+   var switchCounterNum = data.val();
+   //Calls function to update the three paragraphs and passes the switchCounterNum as an arg
+   changeMessages(switchCounterNum);
+}
+
+//Fills in the messages on startup
+counterRef.once("value", swapData);
+
+//Toggles the plane theme on
+$(".planeThemeButton").eq(0).click(function(){
+   $(".planeThemeButton").eq(0).addClass('selected');
+   $(".shipThemeButton").eq(0).removeClass('selected');
+   $(".ufoThemeButton").eq(0).removeClass('selected');
+   for (var i = 0; i < $('.plane').length; i++){
+      $('.plane').eq(i).addClass('planebg');
+      $('.plane').eq(i).removeClass('shipbg');
+      $('.plane').eq(i).removeClass('ufobg');
+   };
+   $('body').addClass('planebgColor');
+   $('body').removeClass('shipbgColor');
+   $('body').removeClass('ufobgColor');
+});
+
+//Toggles the ship theme on
+$(".shipThemeButton").eq(0).click(function(){
+   $(".shipThemeButton").eq(0).addClass('selected');
+   $(".planeThemeButton").eq(0).removeClass('selected');
+   $(".ufoThemeButton").eq(0).removeClass('selected');
+   for (var i = 0; i < $('.plane').length; i++){
+      $('.plane').eq(i).addClass('shipbg');
+      $('.plane').eq(i).removeClass('planebg');
+      $('.plane').eq(i).removeClass('ufobg');
+   };
+   $('body').addClass('shipbgColor');
+   $('body').removeClass('planebgColor');
+   $('body').removeClass('ufobgColor');
+});
+
+//Toggles the ufo theme
+$(".ufoThemeButton").eq(0).click(function(){
+   $(".ufoThemeButton").eq(0).addClass('selected');
+   $(".shipThemeButton").eq(0).removeClass('selected');
+   $(".planeThemeButton").eq(0).removeClass('selected');
+   for (var i = 0; i < $('.plane').length; i++){
+      $('.plane').eq(i).addClass('ufobg');
+      $('.plane').eq(i).removeClass('shipbg');
+      $('.plane').eq(i).removeClass('planebg');
+   };
+   $('body').addClass('ufobgColor');
+   $('body').removeClass('shipbgColor');
+   $('body').removeClass('planebgColor');
+});
+
+//Pushes button in and brings up correct popup
+$('.missionDivButton').click(function(){
+   //Changes the color of the button when clicked, too bad you don't get to see it, lol
+   $('.missionDivButton').toggleClass('popupButtonSelected');
+   //Toggles display of missionPopUp
+   $('.missionPopup').eq(0).toggle();
+});
+
+//Pushes button in and brings up correct popup
+$('.teamDivButton').click(function(){
+   //Changes the color of the button when clicked, too bad you don't get to see it, lol
+   $('.teamDivButton').toggleClass('popupButtonSelected');
+   //Toggles display of teamPopUp
+   $('.teamPopup').eq(0).toggle();
+});
+
+//Closes the mission popup when you click the button
+$('#closeMissionPopup').click(function(){
+   //Toggles the display of the mission popup
+   $('.missionPopup').eq(0).toggle();
+   //Changes the color of the button when clicked, too bad you don't get to see it, lol
+   $('.missionDivButton').toggleClass('popupButtonSelected');
+});
+
+//Closes the team popup when you click the button
+$('#closeTeamPopup').click(function(){
+   //Toggles the display of the mission popup
+   $('.teamPopup').eq(0).toggle();
+   //Changes the color of the button when clicked, too bad you don't get to see it, lol
+   $('.teamDivButton').toggleClass('popupButtonSelected');
+});
