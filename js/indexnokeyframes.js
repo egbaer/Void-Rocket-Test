@@ -20,6 +20,25 @@ const firebaseConfig = {
 //initialize Firebase
 firebase.initializeApp(firebaseConfig);
 
+function resetPlanebox(currentPlanebox){
+   //Changes the planebox's position to its original position
+   
+   console.log(currentPlanebox.attr("id") + "planebox have been reset");
+
+   currentPlanebox.css("left", (350+$('.message').eq(0).outerWidth(true))+window.outerWidth);
+}
+//add a check to see if a plane is off the screen
+function checkPlanebox(currentPlanebox){
+   //Checks if the planebox is off the screen
+   if (currentPlanebox.position().left < -currentPlanebox.outerWidth(true)){
+      console.log(currentPlanebox.attr("id") + "planebox have been checked: " + true);
+      return true;
+   }else{
+      
+      console.log(currentPlanebox.attr("id") + "planebox have been checked: " + false);
+      return false;
+   }
+}
 
 //Database References
 //entire db
@@ -28,6 +47,8 @@ var dbRef = firebase.database().ref();
 var inputRef = dbRef.child('strInput');
 //ref to the counter child in db
 var counterRef = firebase.database().ref("counter/counter");
+
+var theme = "plane";
 
 
 //Better submit button occurrence
@@ -155,16 +176,35 @@ function snatchSingleData(data){
 //Fills in the messages on startup
 counterRef.once("value", swapData);
 
+function changeTheme(currentPlanebox, newtheme){
+   if(newtheme == "planebg"){
+      currentPlanebox.addClass('planebg');
+      currentPlanebox.removeClass('shipbg');
+      currentPlanebox.removeClass('ufobg');
+
+   }else if(newtheme== "shipbg"){
+      currentPlanebox.addClass('shipbg');
+      currentPlanebox.removeClass('planebg');
+      currentPlanebox.removeClass('ufobg');
+
+   }else if(newtheme== "ufobg"){
+      currentPlanebox.addClass('ufobg');
+      currentPlanebox.removeClass('shipbg');
+      currentPlanebox.removeClass('planebg');
+   }
+}
+
+
+
 //Toggles the plane theme on
 $(".planeThemeButton").eq(0).click(function(){
    $(".planeThemeButton").eq(0).addClass('selected');
    $(".shipThemeButton").eq(0).removeClass('selected');
    $(".ufoThemeButton").eq(0).removeClass('selected');
-   for (var i = 0; i < $('.plane').length; i++){
-      $('.plane').eq(i).addClass('planebg');
-      $('.plane').eq(i).removeClass('shipbg');
-      $('.plane').eq(i).removeClass('ufobg');
-   };
+   //for (var i = 0; i < $('.plane').length; i++){
+   //   changeTheme($('.plane').eq(i),'planebg');
+   //};
+   theme = 'planebg';
    $('#backgroundDiv').addClass('planebgColor');
    $('#backgroundDiv').removeClass('shipbgColor');
    $('#backgroundDiv').removeClass('ufobgColor');
@@ -175,11 +215,11 @@ $(".shipThemeButton").eq(0).click(function(){
    $(".shipThemeButton").eq(0).addClass('selected');
    $(".planeThemeButton").eq(0).removeClass('selected');
    $(".ufoThemeButton").eq(0).removeClass('selected');
-   for (var i = 0; i < $('.plane').length; i++){
-      $('.plane').eq(i).addClass('shipbg');
-      $('.plane').eq(i).removeClass('planebg');
-      $('.plane').eq(i).removeClass('ufobg');
-   };
+   /*for (var i = 0; i < $('.plane').length; i++){
+      changeTheme($('.plane').eq(i),'shipbg');
+   };*/
+   
+   theme = 'shipg';
    $('#backgroundDiv').addClass('shipbgColor');
    $('#backgroundDiv').removeClass('planebgColor');
    $('#backgroundDiv').removeClass('ufobgColor');
@@ -190,11 +230,11 @@ $(".ufoThemeButton").eq(0).click(function(){
    $(".ufoThemeButton").eq(0).addClass('selected');
    $(".shipThemeButton").eq(0).removeClass('selected');
    $(".planeThemeButton").eq(0).removeClass('selected');
-   for (var i = 0; i < $('.plane').length; i++){
-      $('.plane').eq(i).addClass('ufobg');
-      $('.plane').eq(i).removeClass('shipbg');
-      $('.plane').eq(i).removeClass('planebg');
-   };
+   //for (var i = 0; i < $('.plane').length; i++){
+   //   changeTheme($('.plane').eq(i),'ufobg');
+   //s};
+
+   theme = 'ufobg';
    $('#backgroundDiv').addClass('ufobgColor');
    $('#backgroundDiv').removeClass('shipbgColor');
    $('#backgroundDiv').removeClass('planebgColor');
@@ -309,6 +349,10 @@ function changeCoords(cMessage, cPlanebox){
       //The planebox's width plus a little extra (in pixels)
       if(cPlanebox.css("left").split('px')[0] <= (-cMessage.outerWidth(true)-350)){
          //Stops repeating this if true
+         
+         resetPlanebox(cPlanebox);
+         changeTheme(cPlanebox, theme);
+         movePlanebox(cPlanebox.attr("id"));
          clearInterval(intervalID);
       } else{
          //Changes the position by -1 if false
