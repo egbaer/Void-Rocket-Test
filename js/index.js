@@ -160,14 +160,23 @@ function changeTheme(cPlanebox, theme){
       cPlane.addClass('planebg');
       cPlane.removeClass('shipbg');
       cPlane.removeClass('ufobg');
+      cPlane.removeClass('ufospecialbg');
    } else if(theme == "shipbg"){
       cPlane.addClass('shipbg');
       cPlane.removeClass('planebg');
       cPlane.removeClass('ufobg');
+      cPlane.removeClass('ufospecialbg');
    } else {
-      cPlane.addClass('ufobg');
+      if(Math.ceil(Math.random()*100) < 3){
+      cPlane.addClass('ufospecialbg');
       cPlane.removeClass('shipbg');
       cPlane.removeClass('planebg');
+      } else {
+         cPlane.addClass('ufobg');
+         cPlane.removeClass('shipbg');
+         cPlane.removeClass('planebg');
+         cPlane.removeClass('ufospecialbg');
+      };
    };
 }
 
