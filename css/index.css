@@ -4,6 +4,18 @@ body {
   padding: 0;
 }
 
+h1 {
+   font-family: "Courier", monospace;
+}
+
+p {
+  font-family: "Courier", monospace;
+}
+
+button {
+  font-family: "Courier", monospace;
+}
+
 #backgroundDiv {
   overflow: hidden;
   position: absolute;
@@ -14,15 +26,15 @@ body {
 
 
 #backgroundDiv.planebgColor{
-   background: linear-gradient(165deg, rgba(247,140,43,1) 0%, rgba(168,50,10,1) 100%);
+   background: linear-gradient(165deg, rgba(209,102,48,1) 0%, rgba(255,234,99,1) 100%);
 }
 
 #backgroundDiv.shipbgColor{
-   background: linear-gradient(165deg, rgba(37,110,213,1) 0%, rgba(10,168,135,1) 68%, rgba(10,168,135,1) 100%);
+   background: linear-gradient(165deg, rgba(33,40,112,1) 0%, rgba(83,172,204,1) 68%, rgba(165,226,230,1) 100%);
 }
 
 #backgroundDiv.ufobgColor{
-   background: radial-gradient(circle, rgba(111,3,122,1) 0%, rgba(8,4,89,1) 100%);
+   background: radial-gradient(circle, rgba(109,41,117,1) 0%, rgba(13,23,31,1) 100%);
 }
 
 input {
@@ -82,7 +94,7 @@ input {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color: white;
+  background-color: #f1f4f7;
   /*width : 50vw;
   height: 50vh;*/
   width: 425px;
@@ -95,14 +107,14 @@ input {
   left: 0;
   border-style: solid;
   border-width: 15px;
-  border-left-color: brown;
-  border-right-color: midnightblue;
-  border-top-color: brown;
-  border-bottom-color: midnightblue;
+  border-left-color: #750d10;
+  border-right-color: #1d1652;
+  border-top-color: #750d10;
+  border-bottom-color: #1d1652;
   box-sizing: border-box;
-  box-shadow: 8px 5px 20px red, -8px -5px 20px blue;
+  box-shadow: 8px 5px 20px #b3508d, -8px -5px 20px #a5e2e6;
   border-radius: 300px;
-  
+
 }
 
 .themeButtonHolder {
@@ -125,8 +137,8 @@ input {
    border-color: black;
    border-radius: 5px;
    border-width: 3px;
-   background-color: hsl(180deg, 23.1%, 92.4%);
-   border-color: hsl(180deg, 15.0%, 50%);
+   background-color: #d0dde4;
+   border-color: #7a95a7;
 }
 
 .themeButton:hover{
@@ -134,31 +146,31 @@ input {
 }
 
 .planeThemeButton.selected {
-   background-color: hsl(32deg, 98.3%, 76.3%);
-   border-color: rgba(168,50,10,1);
+   background-color: #edac4a;
+   border-color: rgba(209,102,48,1);
 }
 
 .shipThemeButton.selected {
-   background-color: hsl(182deg, 78.0%, 76.9%);
-   border-color: rgba(37,110,213,1);
+   background-color: #74ceda;
+   border-color: rgba(57,115,173,1);
 }
 
 .ufoThemeButton.selected {
-   background-color: hsl(257deg, 20.0%, 58.8%);
-   border-color: rgba(8,4,89,1);
+   background-color: #943989;
+   border-color: rgba(63,26,77,1);
 }
 
 
 .planeThemeButton.selected:hover {
-   background-color: hsl(32deg, 98.3%, 65.0%);
+   background-color: #f5cb53;
 }
 
 .shipThemeButton.selected:hover {
-   background-color: hsl(182deg, 78.0%, 65.0%);
+   background-color: #a5e2e6;
 }
 
 .ufoThemeButton.selected:hover {
-   background-color: hsl(257deg, 20.0%, 47.0%);
+   background-color: #b3508d;
 }
 
 
@@ -172,18 +184,18 @@ input {
 }
 
 .planeThemeCircle {
-   background-color: orange;
-   border-color: rgba(168,50,10,1);
+   background-color: #e68d3e;
+   border-color: rgba(209,102,48,1);
 }
 
 .shipThemeCircle {
-   background-color: cornflowerblue;
-   border-color: rgba(37,110,213,1);
+   background-color: #53accc;
+   border-color: rgba(57,115,173,1);
 }
 
 .ufoThemeCircle {
-   background-color: #693187;
-   border-color: rgba(8,4,89,1);
+   background-color: #6d2975;
+   border-color: rgba(63,26,77,1);
 }
 
 
