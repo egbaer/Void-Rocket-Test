@@ -173,31 +173,21 @@ input {
    background-color: #b3508d;
 }
 
-
-.themeCircle {
-   border-radius:100px;
-   border-style: solid;
-   border-color: black;
-   border-width: 2px;
-   width:20px;
-   height:20px;
+.planeThemeButton {
+  background-image: url(../img/skybutton.png);
+  background-size: 100%
 }
 
-.planeThemeCircle {
-   background-color: #e68d3e;
-   border-color: rgba(209,102,48,1);
+.shipThemeButton {
+  background-image: url(../img/seabutton.png);
+  background-size: 100%
+
 }
 
-.shipThemeCircle {
-   background-color: #53accc;
-   border-color: rgba(57,115,173,1);
+.ufoThemeButton {
+  background-image: url(../img/spacebutton.png);
+  background-size: 100%
 }
-
-.ufoThemeCircle {
-   background-color: #6d2975;
-   border-color: rgba(63,26,77,1);
-}
-
 
 .planebox{
   display: flex;
