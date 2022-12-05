@@ -311,6 +311,9 @@ input {
    height: 60vh;
    background-color: pink;
    display:none;
+   border-style: solid;
+   border-color: white;
+   border-width: medium;
 }
 
 .teamPopup{
@@ -325,6 +328,9 @@ input {
    width: 60vw;
    height: 60vh;
    background-color: green;
+   border-style: solid;
+   border-color: yellow;
+   border-width: medium;
 }
 
 .teamImgTag{
