@@ -314,6 +314,7 @@ input {
    border-style: solid;
    border-color: white;
    border-width: medium;
+   padding: 2px;
 }
 
 .teamPopup{
@@ -331,6 +332,7 @@ input {
    border-style: solid;
    border-color: yellow;
    border-width: medium;
+   padding: 2px;
 }
 
 .teamImgTag{
